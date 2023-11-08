@@ -1,0 +1,161 @@
+@font-face {
+  src: url(/worksans-regular.ttf);
+  font-family: worksans;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: worksans;
+}
+
+:root {
+  --background: #d1deec;
+  --foreground: #f1f3f5;
+  --white: #fff;
+  --black: #000;
+  --gray: #6e6e6e; 
+  --shadow: #76767663;
+  --border: #cfcfcf;
+  --border2: rgba(0, 0, 0, .07);
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  padding: 20px 20px;
+  transition: all 300ms ease;
+}
+
+.add-note {
+  width: 100%;
+  height: 100px;
+  background-color: var(--foreground);
+  border-radius: 20px;
+  box-shadow: 0 0 2px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--black);
+  
+}
+
+.all-notes {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.all-notes .note {
+  width: 320px;
+  height: max-content;
+  max-height: 400px;
+  box-shadow: 0 0 2px var(--shadow);
+  border-radius: 20px;
+  background-color: var(--foreground);
+  padding: 20px 20px;
+  overflow: hidden;
+  transition: all 300ms ease;
+}
+
+.all-notes .note .title {
+  width: 100%;
+  height: 40px;
+  text-overflow: ellipsis;
+  color: var(--black);
+}
+
+.all-notes .note .text {
+  width: 100%;
+  height: max-content;
+  max-height: 300px;
+  margin-top: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+  color: var(--black);
+  outline: none;
+}
+
+.write-note-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.write-note-section .main {
+  width: 320px;
+  height: 500px;
+  background-color: var(--foreground);
+  border-radius: 20px;
+  box-shadow: 0 0 5px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 20px;
+  z-index: 5;
+}
+
+
+.write-note-section input, .write-note-section textarea{
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  outline: none;
+  padding: 0 20px;
+  color: var(--black);
+  border-radius: 20px;
+  border: 1px solid var(--border2);
+}
+
+.write-note-section input {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.write-note-section textarea {
+  padding: 20px 20px;
+  height: 340px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.write-note-section button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: var(--background);
+  outline: none;
+  padding: 0 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(-60%)
+  } to {
+    opacity: 1;
+  }
+  
+}
+
